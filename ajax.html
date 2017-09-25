@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+<button type="button" onclick="file()">Change Content</button>
+<script type="text/javascript">
+function file(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			document.getElementById('demo').innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET","moon.html",true);
+	xhttp.send();
+}
+</script>
+</body>
+</html>
